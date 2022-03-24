@@ -2,23 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+//google font
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+//adobe font
+@import url('https://use.typekit.net/zkf8cwa.css');
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: aw-conqueror-didot, serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #f2ebe4;
+
   &:before {
     content: '';
     content: '';
+
     width: 100%;
     height: 100vh;
     background: linear-gradient(
       to right bottom,
-      rgb(230, 220, 245),
-      rgb(231, 225, 225),
-      pink
+
+      pink,
+      rgb(226, 180, 110)
     );
     //background: #d3d3d3;
     position: fixed;
@@ -57,9 +66,14 @@ body {
   }
 }
 
-a {
+a,
+p {
   color: inherit;
   text-decoration: none;
+  font-family: aw-conqueror-didot, serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: lowercase;
 }
 
 * {
