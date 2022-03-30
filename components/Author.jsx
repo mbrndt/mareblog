@@ -8,6 +8,7 @@ const Author = ({ author }) => {
         {' '}
         <img
           alt={author.height}
+          unoptimized
           height="100px"
           width="100px"
           className="rounded-full align-middle"
