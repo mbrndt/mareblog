@@ -1,13 +1,20 @@
 import postcss from 'postcss'
 import React from 'react'
+import Router, { useRouter } from 'next/router'
 import { Categories, PostWidget } from '../../components'
 import Author from '../../components/Author'
 import Comments from '../../components/Comments'
 import CommentsForm from '../../components/CommentsForm'
 import PostDetail from '../../components/PostDetail'
+import { Loader } from '../../components'
 import { getPostDetails, getPosts } from '../../services'
 
 const PostDetails = ({ post }) => {
+  const router = useRouter()
+
+  if (router.isFallback) {
+    return <Loader />
+  }
   return (
     <div className="container mx-auto mb-8 px-10">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -44,6 +51,6 @@ export async function getStaticPaths() {
   const post = await getPosts()
   return {
     paths: post.map(({ node: { slug } }) => ({ params: { slug } })),
-    fallback: false,
+    fallback: true,
   }
 }
